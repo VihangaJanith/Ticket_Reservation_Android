@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="menu_home" type="id" />
+    <item name="menu_dashboard" type="id" />
+    <item name="menu_notifications" type="id" />
+</resources>
