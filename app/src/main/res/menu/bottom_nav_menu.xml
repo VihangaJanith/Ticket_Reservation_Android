@@ -16,7 +16,7 @@
     <item
         android:layout_width="wrap_content"
         android:id="@+id/Settings"
-        android:icon="@drawable/baseline_settings_24"
+        android:icon="@drawable/baseline_train_24"
         android:layout_height="wrap_content"
-        android:title="Settings" />
+        android:title="Reservations" />
 </menu>

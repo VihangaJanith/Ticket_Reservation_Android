@@ -42,7 +42,7 @@
             android:id="@+id/logoImageView"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:src="@drawable/baseline_train_24"
+            android:src="@drawable/baseline_train_242"
             android:layout_gravity="center"/>
 
         <Button
@@ -50,6 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Login"
+            android:backgroundTint="@color/red"
             android:textColor="#FFFFFF"
 
             android:layout_marginTop="32dp"/>
@@ -59,6 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Sign Up"
+            android:backgroundTint="@color/black"
             android:textColor="#FFFFFF"
 
             android:layout_marginTop="16dp"/>

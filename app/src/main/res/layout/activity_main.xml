@@ -6,6 +6,53 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+
+        android:backgroundTint="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <ImageView
+            android:id="@+id/icon_image"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/baseline_train_242"
+            android:layout_gravity="start"
+            android:layout_marginStart="16dp"
+
+
+
+            />
+
+        <!-- Add a TextView for the title text -->
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Train Go"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:textSize="25sp"
+        android:textColor="#FFFFFF"
+        android:layout_gravity="start"
+        android:layout_marginStart="20dp"
+        />
+
+    </androidx.appcompat.widget.Toolbar>
+
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:id="@+id/my_toolbar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="?attr/actionBarSize"-->
+<!--        android:background="?attr/colorPrimary"-->
+<!--        android:elevation="4dp"-->
+<!--        app:title="Train Go"-->
+<!--        android:backgroundTint="@color/colorPrimary"-->
+<!--        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />-->
 
 <!--    <Button-->
 <!--        android:id="@+id/login"-->
@@ -43,7 +90,8 @@
         android:id="@+id/frame_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/bottomNavigationView" />
+        android:layout_above="@+id/bottomNavigationView"
+        android:layout_marginBottom="3dp" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="RoundedCornersAlertDialog" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="android:background">@drawable/rounded_dialog_background</item>
+
+    </style>
+
+</resources>

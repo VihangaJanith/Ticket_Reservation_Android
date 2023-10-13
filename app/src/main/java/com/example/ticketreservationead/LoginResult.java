@@ -5,6 +5,8 @@ public class LoginResult {
     private String name;
     private String email;
 
+    private String id;
+
 
 
     public String getName() {
@@ -13,6 +15,10 @@ public class LoginResult {
 
     public String getEmail() {
         return email;
+    }
+
+    public String getUserid() {
+        return id;
     }
 
 

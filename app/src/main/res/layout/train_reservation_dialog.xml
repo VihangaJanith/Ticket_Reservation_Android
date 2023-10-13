@@ -2,20 +2,21 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="12dp"
+    android:layout_marginTop="20dp"
+    android:layout_height="match_parent">
 
-    <!-- Main Title -->
+
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="User Registration"
+        android:text="Reserve Tickets"
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_gravity="center"
         android:layout_marginBottom="16dp" />
-
-    <!-- Name -->
 
     <com.google.android.material.divider.MaterialDivider
         android:layout_width="match_parent"
@@ -29,73 +30,67 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Name">
+        android:layout_margin="8dp"
+        android:hint="Train Name">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/nameEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text" />
-
+            android:id="@+id/trainName" />
     </com.google.android.material.textfield.TextInputLayout>
-
-    <!-- NIC -->
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter your NIC">
+        android:layout_margin="8dp"
+        android:hint="Booking Date">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/nicEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text" />
-
+            android:id="@+id/bookingDate"/>
     </com.google.android.material.textfield.TextInputLayout>
-
-
-
-
-    <!-- Email -->
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter your Email">
+        android:layout_margin="8dp"
+        android:hint="From">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/emailEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress" />
-
+            android:id="@+id/ticketfrom" />
     </com.google.android.material.textfield.TextInputLayout>
-
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Passowrd">
+        android:layout_margin="8dp"
+        android:hint="To">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/passwordEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword" />
-
+            android:id="@+id/ticketto" />
     </com.google.android.material.textfield.TextInputLayout>
 
-
-
-    <!-- SignUp Button -->
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/signup"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sign Up"
-        android:backgroundTint="@color/colorPrimary"
-        android:layout_marginTop="16dp" />
+        android:layout_margin="8dp"
+        android:hint="No of Tickets">
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/no_ticketss" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:text="Book Tickets"
+        android:id="@+id/ticketreserve" />
 </LinearLayout>

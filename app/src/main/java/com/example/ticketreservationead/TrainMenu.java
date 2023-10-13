@@ -1,12 +1,24 @@
 package com.example.ticketreservationead;
 
+
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +26,8 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class TrainMenu extends Fragment {
+
+    private RecyclerView recyclerView1;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -49,16 +63,53 @@ public class TrainMenu extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.train_menus, container, false);
+        View view = inflater.inflate(R.layout.train_card_view, container, false);
+        recyclerView1 = view.findViewById(R.id.trainrecyclerView);
+        recyclerView1.setHasFixedSize(true);
+        recyclerView1.setLayoutManager(new LinearLayoutManager(requireContext()));
+
+        fetchData();
+        return view;
+    }
+
+    private void fetchData() {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://10.0.2.2:5068/api/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        RetrofitInterface retrofitInterface = retrofit.create(RetrofitInterface.class);
+        Call<List<Train>> call = retrofitInterface.getTrains();
+
+        call.enqueue(new Callback<List<Train>>() {
+            @Override
+            public void onResponse(Call<List<Train>> call, Response<List<Train>> response) {
+                if (!response.isSuccessful()) {
+                    // Handle the error here, e.g., show an error message to the user
+                    return;
+                }
+
+                List<Train> trains = response.body();
+                if (trains != null) {
+                    Log.d("API Response", "Received " + trains.size() + " trains.");
+
+                    // Create an adapter and set it to the RecyclerView
+                    TrainAdaptor adapter = new TrainAdaptor(trains, requireContext());
+                    recyclerView1.setAdapter(adapter);
+
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Train>> call, Throwable t) {
+                // Handle the failure here, e.g., show an error message to the user
+            }
+        });
     }
 }
